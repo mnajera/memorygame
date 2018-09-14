@@ -1,34 +1,40 @@
 .game-layout {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 1em;
 }
 
 .gamecard-container {
-  width: 200px;
-  height: 260px;
+  width: 150;
+  height: 200px;
   perspective: 600px;
+  transition: opacity 0.5s;
 }
 
 .gamecard {
   width: 100%;
   height: 100%;
-  transition: transform 0.75s;
+  transition: transform 0.5s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  opacity: 1;
 }
 
 .gamecard.is-flipped {
   transform: rotateY(180deg);
 }
 
+.gamecard.is-hidden {
+  opacity: 0;
+}
+
 .gamecard__face {
   position: absolute;
   width: 100%;
   height: 100%;
-  line-height: 260px;
+  line-height: 200px;
   color: white;
   text-align: center;
   font-weight: bold;
